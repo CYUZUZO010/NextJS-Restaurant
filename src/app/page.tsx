@@ -1,103 +1,179 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Clock, MapPin, Phone, Star } from "lucide-react";
+import FoodSlider from "@/components/FoodSlider";
+import { useCart } from "@/context/CartContext";
+
+const featuredDishes = [
+  {
+    id: 1,
+    name: "Grilled Salmon",
+    description: "Fresh Atlantic salmon with herbs and lemon",
+    price: 24.99,
+    image: "/grilled.avif?height=200&width=300",
+    category: "Main Course",
+    rating: 4.8,
+  },
+  {
+    id: 2,
+    name: "Truffle Pasta",
+    description: "Homemade pasta with black truffle and parmesan",
+    price: 18.99,
+    image: "/pasta.avif?height=200&width=300",
+    category: "Pasta",
+    rating: 4.9,
+  },
+  {
+    id: 3,
+    name: "Chocolate Lava Cake",
+    description: "Warm chocolate cake with vanilla ice cream",
+    price: 8.99,
+    image: "/cake2.avif?height=200&width=300",
+    category: "Dessert",
+    rating: 4.7,
+  },
+];
+
+export default function HomePage() {
+  const { addItem } = useCart();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen">
+      
+      <section className="relative bg-gradient-to-r from-stone-800 via-stone-700 to-amber-800 text-white py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl font-bold mb-4">Bella Vista Restaurant</h1>
+          <p className="text-xl mb-8">
+            Experience culinary excellence with fresh ingredients and authentic
+            flavors
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-stone-800 hover:bg-gray-100"
+            >
+              <Link href="/menu">View Menu</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-stone-900 hover:bg-amber-50"
+            >
+              <Link href="/reservations">Make Reservation</Link>
+            </Button>
+            <Button asChild size="lg" className="bg-white text-stone-900 hover:bg-amber-50">
+              <Link href="/auth/signin">Sign In</Link>
+            </Button>
+            <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700 text-stone-900">
+              <Link href="/auth/signup">Sign Up</Link>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* Slider Section */}
+      <section className="py-12 bg-white/70 backdrop-blur-sm">
+        <div className="container mx-auto px-4">
+          <FoodSlider
+            items={featuredDishes.map((d) => ({
+              id: d.id,
+              name: d.name,
+              description: d.description,
+              price: d.price,
+              image: d.image,
+              category: d.category,
+              rating: d.rating,
+            }))}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </section>
+
+      {/* Featured Dishes */}
+      <section className="py-16 bg-white/80 backdrop-blur-sm">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-red-600">
+            Featured Dishes
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {featuredDishes.map((dish) => (
+              <Card
+                key={dish.id}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <div className="aspect-video bg-gray-200 relative">
+                  <img
+                    src={dish.image || "/placeholder.svg"}
+                    alt={dish.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <Badge className="absolute top-2 right-2 bg-stone-700">
+                    {dish.category}
+                  </Badge>
+                </div>
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <CardTitle className="text-xl">{dish.name}</CardTitle>
+                    <div className="flex items-center gap-1">
+                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <span className="text-sm text-gray-600">
+                        {dish.rating}
+                      </span>
+                    </div>
+                  </div>
+                  <CardDescription>{dish.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex justify-between items-center">
+                    <span className="text-2xl font-bold text-stone-700">
+                      ${dish.price}
+                    </span>
+                    <Button size="sm" onClick={() => addItem({ id: dish.id, name: dish.name, price: dish.price, image: dish.image, category: dish.category })}>
+                      Add to Cart
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Restaurant Info */}
+      <section className="py-16 bg-gradient-to-r from-stone-200 to-neutral-200">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="flex flex-col items-center">
+              <Clock className="w-12 h-12 text-stone-700 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Opening Hours</h3>
+              <p className="text-gray-600">Mon-Thu: 11AM-10PM</p>
+              <p className="text-gray-600">Fri-Sat: 11AM-11PM</p>
+              <p className="text-gray-600">Sun: 12PM-9PM</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <MapPin className="w-12 h-12 text-stone-700 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Location</h3>
+              <p className="text-gray-600">KK-523 Street</p>
+              <p className="text-gray-600">Downtown, Kigali 10001</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Phone className="w-12 h-12 text-stone-700 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Contact</h3>
+              <p className="text-gray-600">(250) 788-888-888</p>
+              <p className="text-gray-600">info@bellavista.com</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

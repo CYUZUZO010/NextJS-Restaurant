@@ -1,0 +1,40 @@
+// Prisma schema for "restaurant" database using SQLite file restaurant.db
+// Model: Resto (table name `resto`)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  admin
+  client
+  waiter
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  passwordHash String   @db.Text
+  role         Role     @default(client)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Resto {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?  @db.Text
+  priceCents  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("resto")
+}
