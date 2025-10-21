@@ -32,6 +32,7 @@ export default function UsPage() {
             >
               Where culinary craftsmanship meets warm hospitality. Enjoy dishes
               made with the freshest ingredients and a passion for flavor.
+              None but us to meet your flavors also being satisfying!
             </p>
           </div>
         </section>
