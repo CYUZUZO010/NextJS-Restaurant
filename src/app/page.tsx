@@ -163,7 +163,7 @@ export default function HomePage() {
               <MapPin className="w-12 h-12 text-stone-700 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Location</h3>
               <p className="text-gray-600">KK-523 Street</p>
-              <p className="text-gray-600">Downtown, Kigali 10001</p>
+              <p className="text-gray-600">Downtown, Kigali 1001</p>
             </div>
             <div className="flex flex-col items-center">
               <Phone className="w-12 h-12 text-stone-700 mb-4" />
