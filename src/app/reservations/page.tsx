@@ -128,11 +128,13 @@ export default function ReservationsPage() {
             </p>
           </div>
 
+          {/*Filling Form*/}
+
           <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
-                Reservation Details
+                Reservation Details:
               </CardTitle>
               <CardDescription>
                 Please fill in your details to make a reservation
@@ -241,7 +243,7 @@ export default function ReservationsPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="specialRequests">Special Requests</Label>
+                  <Label htmlFor="specialRequests">Special Requests Here</Label>
                   <Textarea
                     id="specialRequests"
                     value={formData.specialRequests}
