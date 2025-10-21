@@ -62,7 +62,7 @@ export default function OrdersPage() {
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-4">Order Tracking</h1>
             <p className="text-stone-700">
-              Track your orders and view your order history
+              Track your orders and view your order history here
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export default function OrdersPage() {
                 </Button>
               )}
             </div>
-
+            {/*When there is nothing in the cart.*/}
             {cartItems.length === 0 ? (
               <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardContent className="py-8 text-center text-stone-600">
@@ -178,7 +178,7 @@ export default function OrdersPage() {
                         )}
                         <div className="flex gap-2 pt-1">
                           <Button variant="outline" size="sm" onClick={() => toast.message("Reservation details", { description: `${res.name} • ${res.date} ${res.time} • ${res.guests} guests` })}>
-                            View Details
+                            View Details:
                           </Button>
                         </div>
                       </div>
