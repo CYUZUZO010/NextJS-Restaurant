@@ -1,5 +1,5 @@
-// app/api/auth/signin/page.tsx
-"use client"
+
+"use client" //for the rendering on client side
 
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -17,6 +17,7 @@ export default function SignInPage() {
     router.push("/")
   }
 
+  //sign up page
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-100 via-neutral-100 to-amber-100 flex items-center justify-center">
       <Card className="w-full max-w-md">
