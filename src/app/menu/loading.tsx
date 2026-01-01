@@ -1,3 +1,5 @@
+//making the loading skeleton
+
 export default function Loading() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-100 via-neutral-100 to-amber-100">
