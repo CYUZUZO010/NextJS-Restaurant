@@ -88,7 +88,7 @@ export default function FoodSlider({ items, interval = 4000 }: { items: SlideIte
         </Button>
       </div>
 
-      {/* Dots */}
+      {/* Dots helping with sliding*/}
       <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
         {safeItems.map((_, i) => (
           <button
