@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
+//the footer
+
 export function Footer() {
   return (
     <footer className="bg-gradient-to-r from-stone-900 via-neutral-900 to-stone-800 text-white py-6">
