@@ -81,7 +81,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Slider Section */}
+
       <section className="py-12 bg-white/70 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <FoodSlider
