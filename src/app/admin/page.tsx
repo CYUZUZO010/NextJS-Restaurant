@@ -24,7 +24,6 @@ export default function AdminPage() {
     return null;
   }
 
-  //the admin page for tracking the users and the operation inside
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-100 via-neutral-100 to-amber-100">
       <div className="container mx-auto py-10">
