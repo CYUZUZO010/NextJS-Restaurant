@@ -15,7 +15,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search, Star, Plus } from "lucide-react";
 import { toast } from "sonner";
 
-const menuItems = [ //hardcoded menu with some foods
+const menuItems = [ 
   {
     id: 1,
     name: "Caesar Salad",
