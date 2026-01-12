@@ -181,7 +181,6 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
             <div className="space-y-6">
               <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader>
