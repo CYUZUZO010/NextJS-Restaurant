@@ -10,7 +10,7 @@ export const {
 } = NextAuth({
   providers: [
     Credentials({
-      // This is the minimum required structure
+     
       async authorize(credentials) {
         // Your logic here
         return null;
