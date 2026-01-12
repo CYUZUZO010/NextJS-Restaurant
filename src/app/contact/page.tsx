@@ -72,7 +72,7 @@ export default function ContactPage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Contact Form */}
+            
             <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
