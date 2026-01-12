@@ -51,8 +51,7 @@ export default function ReservationsPage() {
       });
       return;
     }
-
-    // Persist reservation to localStorage
+    
     try {
       const id = `RES-${Date.now()}`;
       const newReservation = {
