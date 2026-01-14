@@ -76,7 +76,7 @@ export default function FoodSlider({ items, interval = 4000 }: { items: SlideIte
         </div>
       </div>
 
-      {/* Controls */}
+
       <div className="absolute inset-y-0 left-0 flex items-center">
         <Button variant="outline" size="icon" className="ml-3 bg-white/80 backdrop-blur-sm" onClick={prev}>
           <ChevronLeft className="w-5 h-5" />
