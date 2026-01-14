@@ -79,7 +79,7 @@ export function Navbar() {
             <Button asChild className="bg-amber-600 hover:bg-amber-700 text-stone-900">
               <Link href="/auth/signup">Sign Up</Link>
             </Button>
-            {/* Admin button removed for cleaner responsive layout */}
+          
           </div>
 
           {/* Mobile Navigation */}
