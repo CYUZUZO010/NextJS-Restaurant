@@ -11,6 +11,7 @@
     "prisma:migrate": "prisma migrate dev --name init",
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio"
+    
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
