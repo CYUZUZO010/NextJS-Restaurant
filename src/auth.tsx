@@ -12,7 +12,7 @@ export const {
     Credentials({
      
       async authorize(credentials) {
-        // Your logic here
+        
         return null;
       },
     }),
