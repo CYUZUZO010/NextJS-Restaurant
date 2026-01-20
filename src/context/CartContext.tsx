@@ -59,6 +59,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   };
 
   const clearCart = () => persist([]);
+  //
 
   const updateQty = (id: CartItem["id"], qty: number) => {
     if (qty <= 0) return removeItem(id);
