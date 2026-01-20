@@ -19,7 +19,7 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const USERS_KEY = "demo_users"; // Array of {name,email,role,password}
+const USERS_KEY = "demo_users"; 
 const CURRENT_KEY = "current_user";
 
 type StoredUser = User & { password: string };
