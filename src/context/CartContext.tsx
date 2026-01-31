@@ -12,6 +12,7 @@ export type CartItem = {
 };
 
 
+
 type CartContextType = {
   items: CartItem[];
   addItem: (item: Omit<CartItem, "quantity">, qty?: number) => void;
