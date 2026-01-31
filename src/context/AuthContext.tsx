@@ -9,7 +9,6 @@ export type User = {
   role: Role;
   
 };
-
 type AuthContextType = {
   user: User | null;
   loading: boolean;
