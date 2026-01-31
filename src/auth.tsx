@@ -8,7 +8,8 @@ export const {
   
   signIn,
   signOut,
-} = NextAuth({
+} = NextAuth(
+  {
   providers: [
     Credentials({
      
