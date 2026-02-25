@@ -1,7 +1,6 @@
 // Prisma schema for "restaurant" database using SQLite file restaurant.db
 // Model: Resto (table name `resto`)
 
-
 generator client {
   provider = "prisma-client-js"
 }
