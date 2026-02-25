@@ -67,6 +67,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const sessionUser: User = { name: data.name, email: data.email, role: data.role };
     localStorage.setItem(CURRENT_KEY, JSON.stringify(sessionUser));
     setUser(sessionUser);
+    
   };
 
   const signOut = () => {
