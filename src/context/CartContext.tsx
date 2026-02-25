@@ -11,8 +11,6 @@ export type CartItem = {
   category?: string;
 };
 
-
-
 type CartContextType = {
   items: CartItem[];
   addItem: (item: Omit<CartItem, "quantity">, qty?: number) => void;
