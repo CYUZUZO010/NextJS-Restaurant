@@ -5,6 +5,7 @@ import Credentials from "next-auth/providers/credentials";
 export const {
   handlers: { GET, POST },
   auth,
+
   
   signIn,
   signOut,
