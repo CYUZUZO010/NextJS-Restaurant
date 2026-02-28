@@ -1,7 +1,5 @@
 "use client";
-
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
-
 export type CartItem = {
   id: string | number;
   name: string;
