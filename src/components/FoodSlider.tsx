@@ -64,6 +64,7 @@ export default function FoodSlider({ items, interval = 4000 }: { items: SlideIte
             )}
           </div>
           <div className="flex items-center justify-between mt-2">
+            
             <span className="text-3xl font-extrabold text-stone-800">${item.price.toFixed(2)}</span>
             <Button
               className="bg-amber-600 hover:bg-amber-700 text-stone-900"
