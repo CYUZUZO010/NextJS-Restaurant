@@ -28,7 +28,6 @@ export default function FoodSlider({ items, interval = 4000 }: { items: SlideIte
   useEffect(() => {
     if (safeItems.length === 0) return;
     timer.current = window.setInterval(() => {
-      
       setIndex((i) => (i + 1) % safeItems.length);
       
     }, interval);
@@ -42,6 +41,7 @@ export default function FoodSlider({ items, interval = 4000 }: { items: SlideIte
   const item = safeItems[index];
 
   return (
+    
     <div className="relative w-full overflow-hidden rounded-xl shadow-xl border border-stone-200 bg-white/70 backdrop-blur-sm">
       <div className="grid md:grid-cols-2 items-stretch">
         <div className="relative aspect-[16/10] md:aspect-auto min-h-[280px]">
