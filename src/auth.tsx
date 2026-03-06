@@ -13,7 +13,6 @@ export const {
     Credentials({
      
       async authorize(credentials) {
-        
         return null;
       },
     }),
