@@ -22,7 +22,6 @@ export default function FoodSlider({ items, interval = 4000 }: { items: SlideIte
   const { addItem } = useCart();
 
   const safeItems = useMemo(() => (items && items.length > 0 ? items : []), [items]);
-
   const next = () => setIndex((i) => (i + 1) % safeItems.length);
   const prev = () => setIndex((i) => (i - 1 + safeItems.length) % safeItems.length);
 
@@ -31,6 +30,7 @@ export default function FoodSlider({ items, interval = 4000 }: { items: SlideIte
     timer.current = window.setInterval(() => {
       
       setIndex((i) => (i + 1) % safeItems.length);
+      
     }, interval);
     return () => {
       if (timer.current) window.clearInterval(timer.current);
