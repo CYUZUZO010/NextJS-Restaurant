@@ -29,6 +29,7 @@ export default function FoodSlider({ items, interval = 4000 }: { items: SlideIte
   useEffect(() => {
     if (safeItems.length === 0) return;
     timer.current = window.setInterval(() => {
+      
       setIndex((i) => (i + 1) % safeItems.length);
     }, interval);
     return () => {
