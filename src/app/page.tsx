@@ -32,6 +32,7 @@ const featuredDishes = [
     image: "/pasta.avif?height=200&width=300",
     category: "Pasta",
     rating: 4.9,
+    
   },
   {
     id: 3,
