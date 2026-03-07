@@ -46,6 +46,7 @@ const menuItems = [
     rating: 4.9,
     available: true,
   },
+  
   {
     id: 4,
     name: "Chocolate Lava Cake",
