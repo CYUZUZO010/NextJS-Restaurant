@@ -13,8 +13,8 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, MapPin, Phone, Star } from "lucide-react";
 import FoodSlider from "@/components/FoodSlider";
 import { useCart } from "@/context/CartContext";
-
 const featuredDishes = [
+  
   {
     id: 1,
     name: "Grilled Salmon",
