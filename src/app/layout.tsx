@@ -9,7 +9,6 @@ import { CartProvider } from "@/context/CartContext";
 import ToasterClient from "@/components/providers/ToasterClient";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Bella Vista Restaurant",
   description:
