@@ -12,7 +12,7 @@
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio"
     
-  },
+  }, 
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
     "@prisma/client": "^6.16.2",
